@@ -19,10 +19,10 @@ let timestamp = dt.getTime();
 let datetime = dt.toDateString();
 let head = `
 <head>
-	<title>topology sketch ${timestamp}</title>
+	<title>${book.title}</title>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-	<meta name="description" content="${book.description} ::: ${timestamp}"/>
+	<meta name="description" content="${book.description}"/>
 	<meta name="author" content="${book.author}">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -32,9 +32,9 @@ let head = `
 		{
 			"@context": "http://schema.org",
 			"@type": "WebPage",
-			"name": "topology",
+			"name": "${book.title}",
 			"breadcrumb": "core text",
-          	"url": "topology.work",
+          	"url": "${book.rooturl}/${book.file}.html",
 			"description": "${book.description}",
 			"datePublished": "${datetime}",
           	"image": "/apple-touch-icon.png",
@@ -104,7 +104,7 @@ html = html + `
 -->
 <header>
 	<h1>topology</h1>
-	<h2>sketch ::: ${timestamp}</h2>
+	<h2>sketches</h2>
 	<h3 id="author">${book.author}</h3>
 </header>
 <section class="interior num1 pagestartnumbers booksection" id="section0">`;
