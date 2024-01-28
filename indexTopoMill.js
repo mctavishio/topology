@@ -2,7 +2,7 @@ const fs = require("fs");
 const poemfile = `./poems.js`;
 const bookfile = `./book.js`;
 const tools = require("./tools.js");
-const mills = require("./millsTopo.js").reverse();
+const mills = require("./indexTopoFiles.js").reverse();
 const posterfiles = require("./posterfiles.js");
 const dt = new Date();
 const timestamp = dt.getTime();
@@ -298,6 +298,7 @@ mills.map( mill=> {
 	<p>
 		<audio loop=true controls="true" id="soundscape" src="${gsurl}/${mill.name}/line_all_thread_all_echo_reverb.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio>
 	</p>
+	<!--
 	<h5>sound files</h5>
 	<p>
 	<ul>
@@ -305,16 +306,21 @@ mills.map( mill=> {
 		<li><a href="${gsurl}/${mill.name}/line_all_thread_all_echo_reverb.mp3">sound file with reverb & echo</a></li>
 	</ul>
 	</p>
+	-->
 	</div>
 </article>
 <article id="books">
 	<header>
 		<h1>books</h1>
+		<h2>selected frames</h2>
 	</header>
 	<div class="content">
 	<ul>
-		<li><a href="${gsurl}/${mill.name}/printbook.pdf">illustrated book</a></li>
-		<li><a href="${gsurl}/${mill.name}/printbroadsides.pdf">broadsides</a></li>
+		<li><a href="printzine${mill.suffix}.html">html version</a></li>
+		<li><a href="${gsurl}/${mill.name}/printzine.pdf">illustrated book (pdf)</a></li>
+		<li><a href="${gsurl}/${mill.name}/printzinebroadsides.pdf">broadsides (pdf)</a></li>
+		<li><a href="${gsurl}/${mill.name}/printzinefilm.pdf">frames (pdf)</a></li>
+		<li><a href="${gsurl}/${mill.name}/printzinepicturebook.pdf">picture book (pdf)</a></li>
 	</ul>
 	</div>
 </article>
